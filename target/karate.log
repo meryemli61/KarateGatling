@@ -1,0 +1,36 @@
+13:32:16.832 [main] INFO  i.g.c.config.GatlingConfiguration$ - Gatling will try to load 'gatling.conf' config file as ClassLoader resource.
+13:32:17.729 [GatlingSystem-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+13:32:18.306 [main] ERROR io.gatling.app.Gatling$ - Run crashed
+java.lang.IllegalArgumentException: User defined Simulation class CDArticleSimulation could not be loaded
+	at io.gatling.app.Selection$Selector.findUserDefinedSimulationInClassloader$1(Selection.scala:87)
+	at io.gatling.app.Selection$Selector.$anonfun$singleSimulationFromConfig$4(Selection.scala:91)
+	at scala.Option.orElse(Option.scala:477)
+	at io.gatling.app.Selection$Selector.$anonfun$singleSimulationFromConfig$3(Selection.scala:91)
+	at scala.Option.flatMap(Option.scala:283)
+	at io.gatling.app.Selection$Selector.singleSimulationFromConfig(Selection.scala:90)
+	at io.gatling.app.Selection$Selector.$anonfun$selection$1(Selection.scala:52)
+	at scala.Option.getOrElse(Option.scala:201)
+	at io.gatling.app.Selection$Selector.selection(Selection.scala:44)
+	at io.gatling.app.Selection$.apply(Selection.scala:36)
+	at io.gatling.app.Runner.run0(Runner.scala:61)
+	at io.gatling.app.Runner.run(Runner.scala:49)
+	at io.gatling.app.Gatling$.start(Gatling.scala:87)
+	at io.gatling.app.Gatling$.fromArgs(Gatling.scala:49)
+	at io.gatling.app.Gatling$.main(Gatling.scala:38)
+	at io.gatling.app.Gatling.main(Gatling.scala)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at io.gatling.plugin.util.ForkMain.runMain(ForkMain.java:67)
+	at io.gatling.plugin.util.ForkMain.main(ForkMain.java:35)
+Caused by: java.lang.ClassNotFoundException: CDArticleSimulation
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:391)
+	at java.base/java.lang.Class.forName(Class.java:382)
+	at io.gatling.app.Selection$Selector.$anonfun$singleSimulationFromConfig$2(Selection.scala:76)
+	at scala.util.Try$.apply(Try.scala:210)
+	at io.gatling.app.Selection$Selector.findUserDefinedSimulationInClassloader$1(Selection.scala:76)
+	... 19 common frames omitted
+13:32:18.495 [GatlingSystem-akka.actor.default-dispatcher-4] INFO  akka.actor.CoordinatedShutdown - Running CoordinatedShutdown with reason [ActorSystemTerminateReason]
